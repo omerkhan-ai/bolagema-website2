@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Bola Gema</title>
+    <link rel="stylesheet" href="contact.css">
+    <!-- Embed Google Map API -->
+  
+    <!-- Include EmailJS SDK -->
+    
+    
+
+
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="INDEX.HTML" class="nav-logo">Bola Gema</a>
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="menu">
+            <li><a href="INDEX.HTML">Home</a></li>
+            <li><a href="product.html">Products</a></li>
+            <li><a href="timeline.html">New Developments</a></li>
+            <li><a href="fairtrade.html">FairTrade Shop</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Google Map -->
+    <div id="map"></div>
+
+    <!-- Contact Section -->
+    <div class="contact-container">
+        <h1>Contact Us</h1>
+        
+        <!-- Flex Container for Contact Info and Form -->
+        <div class="contact-content">
+            <!-- Contact Information -->
+            <div class="contact-details">
+                <h2>Contact Details</h2>
+                <div class="contact-info">
+                    <h3>OFFICE ADDRESS</h3>
+                    <p>9 KMS- Daska Road Near City Housing Ghuenki, SIALKOT – 51310- PAKISTAN.</p>
+                </div>
+                <div class="contact-info">
+                    <h3>EMAIL</h3>
+                    <p>sales@bolagema.com <br> waseemlodhi77@gmail.com</p>
+                </div>
+                <div class="contact-info">
+                    <h3>PHONE NUMBER</h3>
+                    <p>+92-52-3524121-22</p>
+                </div>
+                <div class="contact-info">
+                    <h3>WHATSAPP NUMBER</h3>
+                    <p>+92-321-6141801</p>
+                </div>
+                <div class="contact-info">
+                    <h3>WEBSITE</h3>
+                    <p><a href="https://www.bolagema.com" target="_blank">www.bolagema.com</a></p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h2>Get In Touch</h2>
+                <form id="contact-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                    
+                    <label for="company">Company:</label>
+                    <input type="text" id="company">
+                    
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" required></textarea>
+                    
+                    <button type="submit">Send</button>
+                </form>
+                
+            </div>
+        </div>
+
+  
+
+
+
+    <hr>
+    <footer id="footer">
+        <div class="footer-container">
+          <!-- Pakistan Office -->
+          <div class="footer-column">
+            <h3>Contact Us</h3>
+            <p><strong>Office:</strong> 9 KMS- Daska Road Near City Housing Ghuenki, SIALKOT-51310-PAKISTAN</p>
+            <p><strong>Phone:</strong> +92-52-3524121-22</p>
+            <p><strong>Cell:</strong> +92-321-6141801</p>
+            <p><strong>Email:</strong> <a href="mailto:sales@bolagema.com">sales@bolagema.com</a></p>
+          </div>
+      
+          <!-- European Office -->
+          <div class="footer-column">
+            <h3>European Service Office</h3>
+            <p><strong>Office:</strong> Premeo Sports GmbH, Ludwig Erhard Str. 18, 20459 | Hamburg | Germany</p>
+            <p><strong>Whatsapp:</strong> +49 1525 7475226‬</p>
+            <p><strong>Email:</strong> <a href="mailto:sales@bolagema.com">sales@bolagema.com</a></p>
+            <p><strong>Email:</strong> <a href="mailto:info@premeosports.de">info@premeosports.de</a></p>
+          </div>
+      
+          <!-- Social Media -->
+          <div class="footer-column">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+              <a href="https://facebook.com" target="_blank"><img src="images/facebook-icon (3).svg" alt="Facebook"></a>
+              <a href="https://twitter.com" target="_blank"><img src="images/twitter-icn.svg" alt="Twitter"></a>
+              <a href="https://www.instagram.com/omrrrrrrrrrrrrrrrrrrrrrrrr/" target="_blank"><img src="images/instagram-icon.svg" alt="Instagram"></a>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Copyright -->
+        <div class="footer-bottom">
+          &copy; 2008–25 BOLA GEMA. All Rights Reserved.
+        </div>
+      </footer>
+    <script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+    <script>
+      // Initialize EmailJS with your user ID
+      emailjs.init({
+  publicKey: '8xLW0VLMthuCvusTJ',
+});
+emailjs.sendForm('service_v5dkktd', 'template_2bulfkl', this);
+    
+      // Function to send form data using EmailJS
+      document.getElementById("contact-form").addEventListener("submit", function(event){
+        event.preventDefault();
+    
+        // Get form values
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var company = document.getElementById("company").value;
+        var message = document.getElementById("message").value;
+    
+        // Create the email parameters
+        var params = {
+            name: name,
+            email: email,
+            company: company,
+            message: message
+        };
+    
+        // Send email using EmailJS
+        emailjs.send("service_v5dkktd", "template_2bulfkl", params)
+            .then(function(response) {
+                alert("Your message has been sent successfully!");
+            }, function(error) {
+                alert("Oops! Something went wrong. Please try again.");
+            });
+    
+        // Clear the form
+        document.getElementById("contact-form").reset();
+      });
+    </script>
+
+    <script src="category.js"></script>
+
+    
+    
+</body>
+</html>

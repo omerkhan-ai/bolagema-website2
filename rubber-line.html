@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rubber Line | Bola Gema</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tomorrow:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="product.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/gsap.min.js"></script>
+
+
+</head>
+<body data-page="sports-balls">
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="INDEX.HTML" class="nav-logo">Bola Gema</a>
+    <div class="burger" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+  
+    </div>
+    <ul id="menu">
+      <li><a href="INDEX.HTML">Home</a></li>
+      <li><a href="product.html">products</a></li>
+      <li><a href="timeline.html">New Developments</a></li>
+      <li><a href="fairtrade.html">FairTrade Shop</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      
+    </ul>
+  </nav>
+  <!-- 🏀 Main Container -->
+  <main>
+
+    <!-- Products Section -->
+<section id="products">
+    <h1>Rubber Products</h1>
+    <div class="product-container">
+
+    <!--basketball-->
+
+      <div class="product-card basketballs">
+        <img src="images/basketball.jpg" alt="Padel Racket" class="product-img">
+        <h3>Basketballs</h3>
+        <p> premium and low end basket balls  which may be used for promotional or professional use</p>
+        <button onclick="window.location.href='sports-balls.html'">View More</button>
+      </div>
+  
+      <div class="product-card butyal">
+        <img src="images/butyal.jpg" alt="butyal bladder" class="product-img">
+        <h3>Butyal Bladder</h3>
+        <p> The core bladder forged out of Imported butyal</p>
+        <button onclick="window.location.href='sports-balls.html'">View More</button>
+      </div>
+
+      <div class="product-card SR ">
+        <img src="images/sr.jpg" alt="SR bladder" class="product-img">
+        <h3>SR Bladder</h3>
+        <p> premium high weight SR bladders</p>
+        <button onclick="window.location.href='sports-balls.html'">View More</button>
+      </div>
+
+      <div class="product-card Winded ">
+        <img src="images/winded.jpg" alt="Winded bladder" class="product-img">
+        <h3>Winded Bladder</h3>
+        <p> premium high weight Winded bladders</p>
+        <button onclick="window.location.href='sports-balls.html'">View More</button>
+      </div>
+
+      <div class="product-card Fabric ">
+        <img src="images/fabric wrapped.jpg" alt="fabric wrapped bladder" class="product-img">
+        <h3>Fabric Wrapped Bladder</h3>
+        <p> premium high weight Fabric Wrapped bladders</p>
+        <button onclick="window.location.href='sports-balls.html'">View More</button>
+      </div>
+      
+
+
+
+    </main>
+        
+
+<!-- Footer -->
+<section>
+    <hr>
+<footer id="footer">
+    <div class="footer-container">
+
+      <!-- Social Media -->
+      <div class="footer-collum">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank"><img src="/images/facebook-icon (3).svg" alt="Facebook"></a>
+          <a href="https://twitter.com" target="_blank"><img src="/images/twitter-icn.svg" alt="Twitter"></a>
+          <a href="https://instagram.com" target="_blank"><img src="/images/instagram-icon.svg" alt="Instagram"></a>
+        </div>
+      </div>
+    </div>
+      
+      
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      &copy; 2008–25 BOLA GEMA. All Rights Reserved.
+    </div>
+  </footer>
+  
+      </section>
+      
+  
+
+  <script src="category.js"></script>
+  
+
+
+  <script>
+    // Navbar animation
+    gsap.from(".product-nav", {
+      y: -100,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out"
+    });
+  
+    // Heading animation
+    gsap.from("h1", {
+      opacity: 0,
+      scale: 0.8,
+      duration: 1,
+      delay: 0.5,
+      ease: "back.out(1.7)"
+    });
+  
+    // Product cards animation
+    gsap.from(".product-card", {
+      opacity: 0,
+      y: 50,
+      scale: 0.95,
+      duration: 1,
+      stagger: 0.2,
+      delay: 0.8,
+      ease: "power2.out"
+    });
+  
+    // Footer animation
+    gsap.from("footer", {
+      y: 100,
+      opacity: 0,
+      duration: 1,
+      delay: 1.5,
+      ease: "power2.out"
+    });
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,248 @@
+/* Base Styles */
+nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color:rgba(255, 255, 255, 0.6);
+    color: #123458;
+    padding: 20px 40px;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'tommorw', sans-serif;
+}
+
+.nav-logo {
+    color: #123458;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+/* Nav Menu */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    font-family: tommorow, sans-serif;
+    color: #123458;
+    
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: rgba(0, 170, 255, 0.15);
+    color: #00aaff;
+}
+
+/* Burger Icon */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+}
+
+.burger span {
+    height: 3px;
+    width: 25px;
+    background: #222;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+
+    nav ul {
+        font-family: "tommorow" , sans-serif;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.973);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    nav ul.is-active {
+        max-height: 100vh; /* Let it expand to full screen height */
+        padding: 20px 0;
+        overflow-y: auto;  /* Allow scrolling if it's still too long */
+    }
+    
+
+    nav ul li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .burger.is-active span:nth-child(1) {
+        transform: rotate(45deg) translateY(8px);
+    }
+
+    .burger.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.is-active span:nth-child(3) {
+        transform: rotate(-45deg) translateY(-8px);
+    }
+}
+
+
+
+
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Set background and font */
+  body {
+    margin-top: 100px;
+    background-color: #F1EFEC;
+    font-family: 'Tomorrow', sans-serif;
+    color: #123458;
+  }
+  
+  /* The main timeline container */
+  .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Vertical timeline line */
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #D4C9BE;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+  
+  /* Container for each event */
+  .container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+  }
+  
+  /* Circle for events */
+  .container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: #D4C9BE;
+    border: 4px solid #123458;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  /* Left side events */
+  .left {
+    left: 0;
+  }
+  
+  /* Right side events */
+  .right {
+    left: 50%;
+  }
+  
+  /* Left arrows */
+  .left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid #D4C9BE;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+  }
+  
+  /* Right arrows */
+  .right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid #D4C9BE;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+  
+  /* Right side circle adjustment */
+  .right::after {
+    left: -16px;
+  }
+  
+  /* Content block for each event */
+  .content {
+    padding: 20px 30px;
+    background-color: #D4C9BE;
+    position: relative;
+    border-radius: 6px;
+    color: #123458;
+  }
+  
+  h2, h3 {
+    color: #123458;
+  }
+  
+  /* Mobile Responsive */
+  @media screen and (max-width: 600px) {
+    .timeline::after {
+      left: 31px;
+    }
+  
+    .container {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+  
+    .container::before {
+      left: 60px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+  
+    .left::after, .right::after {
+      left: 15px;
+    }
+  
+    .right {
+      left: 0%;
+    }
+  }
+  
